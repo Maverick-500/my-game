@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://ds6farcq76ihq"]
+[gd_scene load_steps=8 format=4 uid="uid://ds6farcq76ihq"]
 
 [ext_resource type="PackedScene" uid="uid://djbfqnipkkakx" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://dkqe4v3qd3fr2" path="res://scenes/enemy.tscn" id="2_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://duxjc10dchvdk" path="res://assets/tiles.png" id="2_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://dd70j8efce87p" path="res://assets/black_bar.png" id="4_iywne"]
+[ext_resource type="Texture2D" uid="uid://csidxy2w0oj60" path="res://assets/orange_bar.png" id="5_p57ef"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -124,11 +126,20 @@ tile_map_data = PackedByteArray("AAD//wEAAAABAAMAAAAAAAEAAAABAAMAAAABAAEAAAABAAM
 tile_set = SubResource("TileSet_lbhrr")
 
 [node name="player" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(58, 1)
+position = Vector2(142, -2)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(3, 3)
-position_smoothing_enabled = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="player"]
+offset_left = 104.0
+offset_top = 96.0
+offset_right = 183.0
+offset_bottom = 102.0
+value = 10.0
+nine_patch_stretch = true
+texture_under = ExtResource("4_iywne")
+texture_progress = ExtResource("5_p57ef")
 
 [node name="enemy" parent="." instance=ExtResource("2_lnu2h")]
-position = Vector2(15, -1)
+position = Vector2(15, 5)

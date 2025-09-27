@@ -1,9 +1,12 @@
 extends CharacterBody2D
 
-
-var speed = 130.0
+var max_stamina = 100
+var stamina = max_stamina
+var max_speed = 130
+var speed = max_speed
 var current_dir = "none"
 
+@onready var stamina_bar = $TextureProgressBar
 func _ready():
 	$AnimatedSprite2D.play("front_idle")
 
@@ -13,7 +16,6 @@ func _physics_process(delta):
 	
 
 func player_movement(delta):
-	
 	if Input.is_action_pressed("ui_right"):
 		current_dir = "right"
 		play_anim(1)
@@ -38,14 +40,19 @@ func player_movement(delta):
 		play_anim(0)
 		velocity.x = 0
 		velocity.y = 0
-	
 	move_and_slide()
 
-func player_ability(event):
+func player_ability(delta):
 	if Input.is_action_pressed("use_ability"):
-		speed = 300
+		if stamina > 0:
+			speed = max_speed * 2
+			stamina -= 80 * delta
+		else:
+			speed = max_speed
 	else:
-		speed = 130
+		speed = max_speed
+		stamina = min(stamina + 30 * delta, max_stamina)
+	stamina_bar.value = stamina
 
 func play_anim(movement):
 	var dir = current_dir

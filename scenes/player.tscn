@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://djbfqnipkkakx"]
 
-[ext_resource type="Script" uid="uid://x2ahvfboif2f" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://x2ahvfboif2f" path="res://scripts/player.gd" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://8f86qn2bjhg5" path="res://assets/sprite_sheet.png" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://6ju0wwoxqf2n" path="res://assets/bird_attack.png" id="3_qhqgy"]
 
@@ -131,7 +131,7 @@ size = Vector2(10, 13)
 
 [node name="player" type="CharacterBody2D"]
 collision_layer = 3
-script = ExtResource("1_g2els")
+script = ExtResource("1_qhqgy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qlg0r")
