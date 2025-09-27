@@ -1,43 +1,51 @@
 extends CharacterBody2D
 
 
-const SPEED = 130.0
+var speed = 130.0
 var current_dir = "none"
 
 func _ready():
 	$AnimatedSprite2D.play("front_idle")
 
 func _physics_process(delta):
+	player_ability(delta)
 	player_movement(delta)
+	
 
 func player_movement(delta):
 	
 	if Input.is_action_pressed("ui_right"):
 		current_dir = "right"
 		play_anim(1)
-		velocity.x = SPEED
+		velocity.x = speed
 		velocity.y = 0
 	elif Input.is_action_pressed("ui_left"):
 		current_dir = "left"
 		play_anim(1)
-		velocity.x = -SPEED
+		velocity.x = -speed
 		velocity.y = 0
 	elif Input.is_action_pressed("ui_down"):
 		current_dir = "down"
 		play_anim(1)
 		velocity.x = 0
-		velocity.y = SPEED
+		velocity.y = speed
 	elif Input.is_action_pressed("ui_up"):
 		current_dir = "up"
 		play_anim(1)
 		velocity.x = 0
-		velocity.y = -SPEED
+		velocity.y = -speed
 	else:
 		play_anim(0)
 		velocity.x = 0
 		velocity.y = 0
 	
 	move_and_slide()
+
+func player_ability(event):
+	if Input.is_action_pressed("use_ability"):
+		speed = 300
+	else:
+		speed = 130
 
 func play_anim(movement):
 	var dir = current_dir

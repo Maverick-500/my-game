@@ -4,17 +4,20 @@ var speed = 40
 var player_chase = false
 var player = null
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
+	
 	if player_chase:
-		position += (player.position - position)/speed
-		
-		
+		if position.distance_to(player.position) > 20:
+			position+=(player.position-position)/speed
+	move_and_slide()
 
-func _on_detection_area_body_entered(body):
+
+func _on_detection_area_body_entered(body: Node2D) -> void:
 	player = body
 	player_chase = true
 
 
-func _on_detection_area_body_shape_exited(body):
+
+func _on_detection_area_body_exited(body: Node2D) -> void:
 	player = null
 	player_chase = false
