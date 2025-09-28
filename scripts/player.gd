@@ -64,7 +64,7 @@ func player_ability(delta):
 	else:
 		speed = Global.max_speed
 		stamina = min(stamina + 30 * delta, Global.max_stamina)
-	stamina_bar.value = stamina
+	stamina_bar.value = 100 * stamina / Global.max_stamina
 
 func play_anim(movement):
 	var dir = current_dir

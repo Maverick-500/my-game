@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://ds6farcq76ihq"]
+[gd_scene load_steps=15 format=4 uid="uid://ds6farcq76ihq"]
 
 [ext_resource type="PackedScene" uid="uid://djbfqnipkkakx" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://dayeqd23xi7fl" path="res://assets/tiles(1).png" id="2_gee14"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://g3d871uyhvch" path="res://scenes/menu.tscn" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://320bkg3i1m0c" path="res://scenes/altar.tscn" id="7_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://dntg7dku3yqjb" path="res://assets/green_bar.png" id="8_0tnpc"]
+[ext_resource type="AudioStream" uid="uid://bur3vhd4nb7jv" path="res://assets/doom but birds and faster.mp3" id="10_kvpfn"]
+[ext_resource type="Script" uid="uid://dm1ibusru2isn" path="res://scripts/audio_stream_player_2d.gd" id="11_dinhu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gee14"]
 texture = ExtResource("2_yqjtg")
@@ -434,3 +436,8 @@ texture_progress = ExtResource("8_0tnpc")
 
 [node name="Window" parent="." instance=ExtResource("6_p57ef")]
 visible = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_kvpfn")
+autoplay = true
+script = ExtResource("11_dinhu")

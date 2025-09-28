@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bur3vhd4nb7jv"
+path="res://.godot/imported/doom but birds and faster.mp3-69f96d52c9b136c4bb1b004c1b9438e0.mp3str"
+
+[deps]
+
+source_file="res://assets/doom but birds and faster.mp3"
+dest_files=["res://.godot/imported/doom but birds and faster.mp3-69f96d52c9b136c4bb1b004c1b9438e0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
