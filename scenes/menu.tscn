@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://xojsmyn700a5" path="res://scripts/menu.gd" id="1_yqeox"]
 
 [node name="Window" type="Window"]
+process_mode = 3
 oversampling_override = 1.0
 initial_position = 1
 size = Vector2i(480, 360)

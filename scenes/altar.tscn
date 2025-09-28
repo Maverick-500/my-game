@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://320bkg3i1m0c"]
+[gd_scene load_steps=6 format=3 uid="uid://320bkg3i1m0c"]
 
 [ext_resource type="Texture2D" uid="uid://85a4fe6s2y56" path="res://assets/altar.png" id="1_hwdfh"]
+[ext_resource type="Script" uid="uid://jfiy718nbmvl" path="res://scripts/altar.gd" id="1_si8oa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eo3o5"]
 atlas = ExtResource("1_hwdfh")
@@ -26,6 +27,8 @@ animations = [{
 size = Vector2(28, 16)
 
 [node name="altar" type="Area2D"]
+position = Vector2(-1, 0)
+script = ExtResource("1_si8oa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_o4c8i")
@@ -33,5 +36,5 @@ animation = &"altar"
 autoplay = "altar"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 7)
+position = Vector2(-2, 7.5)
 shape = SubResource("RectangleShape2D_l1ksh")

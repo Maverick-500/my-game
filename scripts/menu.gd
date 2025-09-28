@@ -8,12 +8,14 @@ func _ready():
 	
 	$VBoxContainer/convert.pressed.connect(func(): _on_convert_pressed())
 	$VBoxContainer/close.pressed.connect(func(): _on_close_pressed())
+	_on_close_pressed()
 	
 	var target_stat_option = $VBoxContainer/target/target_stat_option
 	target_stat_option.add_item("Health")
 	target_stat_option.add_item("Strength")
 	target_stat_option.add_item("Stamina")
 	target_stat_option.add_item("Speed")
+	
 
 func open_menu():
 	get_tree().paused = true
@@ -47,12 +49,16 @@ func _on_convert_pressed():
 	var target = $VBoxContainer/target/target_stat_option.get_item_text(index)
 	match target:
 		"Health":
-			Global.max_health += amount
+			if Global.max_health + amount <= Global.max_max_health:
+				Global.max_health += amount
 		"Strength":
-			Global.max_strength += amount
+			if Global.max_strength + amount <= Global.max_max_strength:
+				Global.max_strength += amount
 		"Stamina":
-			Global.max_stamina += amount
+			if Global.max_stamina + amount <= Global.max_max_stamina:
+				Global.max_stamina += amount
 		"Speed":
-			Global.max_speed += amount
+			if Global.max_speed + amount <= Global.max_max_speed:
+				Global.max_speed += amount
 	Global.soul_meter -= amount
 	update_ui()
