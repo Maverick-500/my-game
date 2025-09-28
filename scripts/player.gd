@@ -1,9 +1,7 @@
 extends CharacterBody2D
 
-var max_stamina = 100
-var stamina = max_stamina
-var max_speed = 130
-var speed = max_speed
+var stamina = Global.max_stamina
+var speed = Global.max_speed
 var current_dir = "none"
 
 @onready var stamina_bar = $TextureProgressBar
@@ -45,13 +43,13 @@ func player_movement(delta):
 func player_ability(delta):
 	if Input.is_action_pressed("use_ability"):
 		if stamina > 0:
-			speed = max_speed * 2
+			speed = Global.max_speed * 2
 			stamina -= 80 * delta
 		else:
-			speed = max_speed
+			speed = Global.max_speed
 	else:
-		speed = max_speed
-		stamina = min(stamina + 30 * delta, max_stamina)
+		speed = Global.max_speed
+		stamina = min(stamina + 30 * delta, Global.max_stamina)
 	stamina_bar.value = stamina
 
 func play_anim(movement):

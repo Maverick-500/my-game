@@ -1,0 +1,119 @@
+[gd_scene load_steps=2 format=3 uid="uid://g3d871uyhvch"]
+
+[ext_resource type="Script" uid="uid://xojsmyn700a5" path="res://scripts/menu.gd" id="1_yqeox"]
+
+[node name="Window" type="Window"]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(480, 360)
+script = ExtResource("1_yqeox")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 14.0
+offset_top = 28.0
+offset_right = 467.0
+offset_bottom = 343.0
+
+[node name="health" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/health"]
+layout_mode = 2
+text = "Health    "
+
+[node name="health_bar" type="ProgressBar" parent="VBoxContainer/health"]
+custom_minimum_size = Vector2(240, 10)
+layout_mode = 2
+value = 5.0
+
+[node name="health_sacrifice" type="Button" parent="VBoxContainer/health"]
+layout_mode = 2
+text = "Sacrifice"
+
+[node name="strength" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/strength"]
+layout_mode = 2
+text = "Strength"
+
+[node name="strength_bar" type="ProgressBar" parent="VBoxContainer/strength"]
+custom_minimum_size = Vector2(240, 10)
+layout_mode = 2
+value = 5.0
+
+[node name="strength_sacrifice" type="Button" parent="VBoxContainer/strength"]
+layout_mode = 2
+text = "Sacrifice"
+
+[node name="stamina" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/stamina"]
+layout_mode = 2
+text = "Stamina "
+
+[node name="stamina_bar" type="ProgressBar" parent="VBoxContainer/stamina"]
+custom_minimum_size = Vector2(240, 10)
+layout_mode = 2
+value = 5.0
+
+[node name="stamina_sacrifice" type="Button" parent="VBoxContainer/stamina"]
+layout_mode = 2
+text = "Sacrifice"
+
+[node name="speed" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/speed"]
+layout_mode = 2
+text = "Speed     "
+
+[node name="speed_bar" type="ProgressBar" parent="VBoxContainer/speed"]
+custom_minimum_size = Vector2(240, 10)
+layout_mode = 2
+value = 5.0
+
+[node name="speed_sacrifice" type="Button" parent="VBoxContainer/speed"]
+layout_mode = 2
+text = "Sacrifice"
+
+[node name="soul" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/soul"]
+layout_mode = 2
+text = "Soul         "
+
+[node name="soul_bar" type="ProgressBar" parent="VBoxContainer/soul"]
+custom_minimum_size = Vector2(240, 10)
+layout_mode = 2
+value = 5.0
+
+[node name="target" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/target"]
+layout_mode = 2
+text = "Target Stat"
+
+[node name="target_stat_option" type="OptionButton" parent="VBoxContainer/target"]
+layout_mode = 2
+
+[node name="amount" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/amount"]
+layout_mode = 2
+text = "Amount"
+
+[node name="select_amount" type="SpinBox" parent="VBoxContainer/amount"]
+layout_mode = 2
+
+[node name="convert" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Convert"
+
+[node name="close" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Close"

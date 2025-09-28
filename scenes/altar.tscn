@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://320bkg3i1m0c"]
+
+[ext_resource type="Texture2D" uid="uid://85a4fe6s2y56" path="res://assets/altar.png" id="1_hwdfh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo3o5"]
+atlas = ExtResource("1_hwdfh")
+region = Rect2(0, 31, 32, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o4c8i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eo3o5")
+}],
+"loop": true,
+"name": &"altar",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"trial altar",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1ksh"]
+size = Vector2(28, 16)
+
+[node name="altar" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_o4c8i")
+animation = &"altar"
+autoplay = "altar"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 7)
+shape = SubResource("RectangleShape2D_l1ksh")

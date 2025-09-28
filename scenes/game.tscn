@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://ds6farcq76ihq"]
+[gd_scene load_steps=9 format=4 uid="uid://ds6farcq76ihq"]
 
 [ext_resource type="PackedScene" uid="uid://djbfqnipkkakx" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://dkqe4v3qd3fr2" path="res://scenes/enemy.tscn" id="2_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://duxjc10dchvdk" path="res://assets/tiles.png" id="2_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://dd70j8efce87p" path="res://assets/black_bar.png" id="4_iywne"]
 [ext_resource type="Texture2D" uid="uid://csidxy2w0oj60" path="res://assets/orange_bar.png" id="5_p57ef"]
+[ext_resource type="PackedScene" uid="uid://g3d871uyhvch" path="res://scenes/menu.tscn" id="6_p57ef"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -143,3 +144,5 @@ texture_progress = ExtResource("5_p57ef")
 
 [node name="enemy" parent="." instance=ExtResource("2_lnu2h")]
 position = Vector2(15, 5)
+
+[node name="Window" parent="." instance=ExtResource("6_p57ef")]
